@@ -10,21 +10,14 @@ namespace university_lab
     {
         static void Main(string[] args)
         {
-            var UProgram = new UProgram("Information Technology", "Bachelors");
+            var UProgram = new UProgram("Information Technology");
 
-            Console.WriteLine($"the Program is {UProgram.Class} and the degree it contains is {UProgram.Degree}");
+            UProgram.Display();
+            
+
+
+
         }
             
-    }
-    public class UProgram
-    {
-        public string Class { get; set; }
-        public string Degree { get; set; }
-   
-        public UProgram(string uclass, string degree)
-        {
-            this.Class = uclass;
-            this.Degree = degree;
-        }
     }
 }
