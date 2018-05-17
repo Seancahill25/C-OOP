@@ -4,25 +4,76 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVA_Class_Demo
+namespace Mod2_Lab1
 {
-    abstract class Employee
+   abstract class Employee
     {
-        public virtual void Login()
+        private string employeeName;
+        private double employeeBaseSalary;
+        private int employeeId;
+        private static int employeeCount = 1;
+
+        public string Name
         {
-            Console.WriteLine("Employee login");
+            get
+            {
+                return employeeName;
+            }
+            set
+            {
+                employeeName = value;
+            }
+        }
+        public double BaseSalary
+        {
+            get
+            {
+                return employeeBaseSalary;
+            }
+            set
+            {
+                employeeBaseSalary = value;
+            }
+        }
+        public int ID
+        {
+            get
+            {
+                return employeeId;
+            }
+            set
+            {
+                employeeId = value;
+            }
         }
 
-        public abstract void Hire();
+        public Employee(String name, double baseSalary)
+        {
+            this.Name = name;
+            this.BaseSalary = baseSalary;
+            this.ID = employeeCount++;
+        }
 
-        private string empNumber;
-        private string firstName;
-        private string lastName;
-        private string address;
+        public double getBaseSalary()
+        {
+            return this.BaseSalary;
+        }
 
-        public string  EmpNumber { get; set; }
-        public string  FirstName { get; set; }
-        public string  LastName { get; set; }
-        public string Address { get; set; }
-    }   
+        public String getName()
+        {
+            return this.Name;
+        }
+
+        public int getEmployeeID()
+        {
+            return this.ID;
+        }
+
+        public String toString()
+        {
+            return this.ID + " " + this.Name;
+        }
+
+        public abstract String employeeStatus();
+    }
 }

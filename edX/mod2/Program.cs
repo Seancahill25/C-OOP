@@ -4,23 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVA_Class_Demo
+namespace Mod2_Lab1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Manager myManager = new Manager();
-            myManager.Login();
-            myManager.Hire();
+            var employee1 = new TechnicalEmployee("Libby");
+            var employee2 = new TechnicalEmployee("Zaynah");
+            var employee3 = new BusinessEmployee("Winter");
 
-            #region Anon Class
-
-            var anon = new { Name = "Sean", Age = 26 };
-
-            Console.WriteLine(anon.Name + anon.Age);
-
-            #endregion
+            Console.WriteLine(employee1.employeeStatus() + "..." + employee2.employeeStatus() + "..." +
+                employee3.employeeStatus());
         }
     }
 }
